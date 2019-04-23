@@ -1,9 +1,9 @@
 import React from 'react';
 
-import TodoListContainer from './app/screens/TodoList';
+import TodoListScreenContainer from './app/screens/TodoList';
 
 function App() {
- return <TodoListContainer/>;
+ return <TodoListScreenContainer />;
 };
 
 export default App;

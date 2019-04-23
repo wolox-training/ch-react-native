@@ -1,11 +1,11 @@
 import React from 'react';
 import { FlatList, StyleSheet } from 'react-native';
 
-import TodoItem from './components/TodoItem';
+import TodoItemContainer from './components/TodoItemContainer';
 
 function TodoList({ onDeleteItem, listData }) {
   renderList = item => (
-    <TodoItem onDeleteItem={onDeleteItem} index={item.key} item={item} />
+    <TodoItemContainer onDeleteItem={onDeleteItem} index={item.key} item={item} />
   );
 
   return (

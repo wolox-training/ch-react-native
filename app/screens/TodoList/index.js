@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native'; 
 
-import TodoList from './components/TodoList';
-import Header from './components/Header';
-import TodoInput from './components/TodoInput';
-import RemoveAllItems from './components/RemoveAllItems';
 import { formattedData } from './constants';
 import { formatNewItem } from './utils';
+import TodoListScreen from './layout';
 
-class TodoListContainer extends Component {
+class TodoListScreenContainer extends Component {
   state = { data: formattedData };
 
   handleAddItem = e => 
@@ -16,7 +13,7 @@ class TodoListContainer extends Component {
       [...this.state.data, formatNewItem(e.nativeEvent.text, this.state.data.length)]
     });
 
-  handleDeleteItem = (_, index) => {
+  handleDeleteItem = index => {
     const { data } = this.state;
     
     const newData = [...data];
@@ -31,15 +28,12 @@ class TodoListContainer extends Component {
     const { data } = this.state;
 
     return (
-      <View style={styles.container}>
-        <Header />
-        <TodoInput onAddItem={this.handleAddItem}/>
-        <TodoList 
-          listData={data} 
-          onDeleteItem={this.handleDeleteItem} 
-        />
-        <RemoveAllItems onRemoveAllItems={this.handleRemoveAllItems}/>
-      </View>
+      <TodoList 
+        listData={data} 
+        onAddItem={this.handleAddItem}
+        onDeleteItem={this.handleDeleteItem} 
+        onRemoveAllItems={this.handleRemoveAllItems}
+      />
     );
   }
 }
@@ -53,4 +47,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default TodoListContainer;
+export default TodoListScreenContainer;
