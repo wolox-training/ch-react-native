@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { View, FlatList, StyleSheet, Text } from 'react-native';
+import React from 'react';
+import { View, StyleSheet, Text } from 'react-native';
 
 function Header() {
   return (
@@ -7,7 +7,7 @@ function Header() {
       <Text style={styles.title}>Todo List</Text>
     </View>
   )
-}
+};
 
 const styles = StyleSheet.create({
   header: {

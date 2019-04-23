@@ -1,11 +1,9 @@
-import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import React from 'react';
 
 import TodoListContainer from './app/screens/TodoList';
-import BooksListContainer from './app/screens/BooksList';
 
-const App = createBottomTabNavigator({
-  TodoList: TodoListContainer,
-  BooksList: BooksListContainer
-})
+function App() {
+ return <TodoListContainer/>;
+};
 
-export default createAppContainer(App);
+export default App;

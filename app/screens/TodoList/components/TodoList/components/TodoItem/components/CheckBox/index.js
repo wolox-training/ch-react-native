@@ -24,9 +24,9 @@ const styles = StyleSheet.create({
     width: 24
   },
   center: {
+    backgroundColor: '#FFF',
     height: 12,
-    width: 12,
-    backgroundColor: '#FFF'
+    width: 12
   },
   centerActive: {
     backgroundColor: '#000'
