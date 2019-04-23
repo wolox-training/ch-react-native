@@ -1,19 +1,24 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, FlatList } from 'react-native';
 
-import TodoList from './components/TodoList';
+import TodoItemContainer from './components/TodoItem';
 import Header from './components/Header';
 import TodoInput from './components/TodoInput';
 import RemoveAllItems from './components/RemoveAllItems';
 
 function TodoListScreen({ onAddItem, listData, onDeleteItem, onRemoveAllItems }) {
+  renderList = item => (
+    <TodoItemContainer onDeleteItem={onDeleteItem} index={item.key} item={item} />
+  );
+
   return (
     <View style={styles.container}>
       <Header />
       <TodoInput onAddItem={onAddItem} />
-      <TodoList
-        listData={listData}
-        onDeleteItem={onDeleteItem}
+      <FlatList
+        style={styles.listContainer}
+        data={listData}
+        renderItem={({ item }) => renderList(item)}
       />
       <RemoveAllItems onRemoveAllItems={onRemoveAllItems} />
     </View>
@@ -26,6 +31,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
     flex: 1,
     justifyContent: 'center'
+  },
+  listContainer: {
+    alignSelf: 'stretch',
+    backgroundColor: 'white',
+    flex: 1
   }
 });
 
