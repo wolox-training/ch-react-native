@@ -50,8 +50,8 @@ export const bookData = [
     "title": "The Girl on the Train\n",
     "genre": "suspense",
     "publisher": "Riverhead Books",
-    "year": "2015", º
-       "image_url": "http://wolox-training.s3.amazonaws.com/uploads/content.jpeg"
+    "year": "2015",
+    "image_url": "http://wolox-training.s3.amazonaws.com/uploads/content.jpeg"
   },
   {
     "id": 7,
@@ -68,8 +68,8 @@ export const bookData = [
     "title": "The analyst",
     "genre": "thriller",
     "publisher": "Ballantine Books",
-    "year": "2003", º
-       "image_url": "http://wolox-training.s3.amazonaws.com/uploads/el-psicoanalista-analyst-john-katzenbach-paperback-cover-art.jpg"
+    "year": "2003", 
+    "image_url": "http://wolox-training.s3.amazonaws.com/uploads/el-psicoanalista-analyst-john-katzenbach-paperback-cover-art.jpg"
   },
   {
     "id": 9,

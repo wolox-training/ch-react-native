@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native'; 
 
+import BooksList from './components/BooksList';
+import { bookData } from './constants';
+
 class BooksListContainer extends Component {  
   render() {
     return (
       <View style={styles.container}>
-        
+        <BooksList bookData={bookData}/>
       </View>
     );
   }
@@ -13,10 +16,9 @@ class BooksListContainer extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'red',
+    justifyContent: 'center',
+    flex: 1
   }
 });
 
