@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
-function Header() {
+function DummyScreenContainer() {
   return (
     <View style={styles.header}>
-      <Text style={styles.title}>Todo List</Text>
+      <Text style={styles.title}>Hey</Text>
     </View>
   )
 };
@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     backgroundColor: '#49b6ff',
     height: 60,
-    paddingTop: 20,
     justifyContent: 'center'
   },
   title: {
@@ -24,4 +23,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Header;
+export default DummyScreenContainer;

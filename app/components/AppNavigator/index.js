@@ -1,13 +1,15 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
-import TodoListContainer from '../../screens/TodoList'
+import ListsScreen from '../../screens/Lists'
 
 const AppNavigator = createStackNavigator(
   {
-    TodoList: TodoListContainer
-  },
-  {
-    initialRouteName: "TodoList"
+    Lists: {
+      screen: ListsScreen,
+      navigationOptions: () => ({
+        title: `Apiaccere`,
+      }),
+    }
   }
 );
 

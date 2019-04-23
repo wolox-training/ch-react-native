@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     backgroundColor: '#49b6ff',
     height: 60,
-    paddingTop: 20,
     justifyContent: 'center'
   },
   title: {

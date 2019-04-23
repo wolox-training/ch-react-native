@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
 
 function CheckBox({ isChecked }) {
+  console.log('isChecked', isChecked);
+
   return (
     <View style={styles.container}>
       <View style={[styles.center, isChecked && styles.centerActive]} />
@@ -24,12 +26,12 @@ const styles = StyleSheet.create({
     width: 24
   },
   center: {
-    backgroundColor: '#FFF',
+    backgroundColor: 'white',
     height: 12,
     width: 12
   },
   centerActive: {
-    backgroundColor: '#000'
+    backgroundColor: 'black'
   }
 });
 
