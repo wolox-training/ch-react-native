@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, FlatList, StyleSheet, Text, TouchableOpacity } from 'react-native';
+
+import TodoItem from './layout';
 
 class TodoItemContainer extends Component {
   state = { isChecked: false };
@@ -18,6 +19,7 @@ class TodoItemContainer extends Component {
         onCheck={this.handleCheck}
         onDelete={this.handleDelete}
         isChecked={isChecked}
+        item={item}
       />    
     );
   }

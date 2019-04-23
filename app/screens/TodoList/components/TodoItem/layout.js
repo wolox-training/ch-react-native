@@ -1,12 +1,12 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 
 import CheckBox from './components/CheckBox';
 
-function TodoItem({ onCheck, onDelete, isChecked }) {
+function TodoItem({ onCheck, onDelete, isChecked, item }) {
   return (
     <TouchableOpacity
-      onPress={this.handleCheck}
+      onPress={onCheck}
       style={[
         styles.itemContainer,
         isChecked && styles.itemContainerSelected

@@ -24,12 +24,12 @@ const styles = StyleSheet.create({
     width: 24
   },
   center: {
-    backgroundColor: 'black',
+    backgroundColor: 'white',
     height: 12,
     width: 12
   },
   centerActive: {
-    backgroundColor: 'white'
+    backgroundColor: 'black'
   }
 });
 

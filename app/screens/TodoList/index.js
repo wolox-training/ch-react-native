@@ -28,7 +28,7 @@ class TodoListScreenContainer extends Component {
     const { data } = this.state;
 
     return (
-      <TodoList 
+      <TodoListScreen 
         listData={data} 
         onAddItem={this.handleAddItem}
         onDeleteItem={this.handleDeleteItem} 
