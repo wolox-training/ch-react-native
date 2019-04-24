@@ -4,5 +4,4 @@ const data = [
     'pray'
   ];
   
-  export const formattedData = data.map((item, i) => ({ key: i.toString(), text: item }));
-  
+export const formattedData = data.map((item, i) => ({ key: i.toString(), text: item }));
