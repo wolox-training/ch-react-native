@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { StyleSheet, TouchableOpacity, Text } from 'react-native';
 
 function RemoveAllItems({ onRemoveAllItems }) {
@@ -10,7 +10,7 @@ function RemoveAllItems({ onRemoveAllItems }) {
       <Text style={styles.title}>Remove All Items</Text>
     </TouchableOpacity>
   )
-}
+};
 
 const styles = StyleSheet.create({
   header: {

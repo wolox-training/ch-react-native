@@ -21,12 +21,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'stretch',
     backgroundColor: 'white',
+    borderBottomWidth: 1,
+    borderColor: '#bbbbbb',
     height: 60,
     fontSize: 24,
-    borderColor: '#bbbbbb',
-    borderBottomWidth: 1,
-    paddingHorizontal: 20,
-    justifyContent: 'center'
+    justifyContent: 'center',
+    paddingHorizontal: 20
   }
 });
 
