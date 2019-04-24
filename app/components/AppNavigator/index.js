@@ -7,7 +7,7 @@ const AppNavigator = createStackNavigator(
     Lists: {
       screen: ListsScreen,
       navigationOptions: () => ({
-        title: `Apiaccere`,
+        title: 'Apiaccere',
       }),
     }
   }

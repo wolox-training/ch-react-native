@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native'; 
+import { View, StyleSheet } from 'react-native'; 
 
 import { formattedData } from './constants';
 import { formatNewItem } from './utils';
@@ -37,5 +37,14 @@ class TodoListScreenContainer extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+    flex: 1,
+    justifyContent: 'center'
+  }
+});
 
 export default TodoListScreenContainer;
