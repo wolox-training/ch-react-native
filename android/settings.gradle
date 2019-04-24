@@ -1,0 +1,3 @@
+rootProject.name = 'trainingReactNative'
+
+include ':app'
