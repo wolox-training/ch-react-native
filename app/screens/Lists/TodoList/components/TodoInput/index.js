@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import { TextInput, StyleSheet } from 'react-native';
+import React from 'react';
+import { TextInput } from 'react-native';
 
 import { INPUT_PLACEHOLDER } from './constants';
+import styles from './styles';
 
 function TodoInput({ onAddItem }) {
   handleAddItem = e => onAddItem(e);
@@ -15,19 +16,5 @@ function TodoInput({ onAddItem }) {
     />
   )
 }
-
-const styles = StyleSheet.create({
-  input: {
-    alignItems: 'center',
-    alignSelf: 'stretch',
-    backgroundColor: 'white',
-    borderBottomWidth: 1,
-    borderColor: '#bbbbbb',
-    height: 60,
-    fontSize: 24,
-    justifyContent: 'center',
-    paddingHorizontal: 20
-  }
-});
 
 export default TodoInput;
