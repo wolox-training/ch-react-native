@@ -1,23 +1,38 @@
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, Text } from 'react-native';
+import { View, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-function BookItem({ image, title, author }) {
-  return (
-    <View style={styles.itemContainer}>
-      {image ? (
-        <Image
-          style={styles.image}
-          source={{ uri: image }}
-        />
-      ) : (
-        <View style={styles.placeholderImage} />
-      )}
-      <View style={styles.textContainer}>
-        <Text style={styles.itemTitle}>{title}</Text>
-        <Text style={styles.itemAuthor}>{author}</Text>
-      </View>
-    </View>
-  );
+class BookItem extends Component {
+  handlePressItem = () => 
+    {
+      console.log('hey', this.props);
+      this.props.navigation.navigate('BookDetailContainer', { id: this.props.id });
+    }
+
+  render() {
+    const { image, title, author } = this.props;
+
+    console.log('no', this.props);
+
+    return (
+      <TouchableOpacity 
+        onPress={this.handlePressItem}
+        style={styles.itemContainer}
+      >
+        {image ? (
+          <Image
+            style={styles.image}
+            source={{ uri: image }}
+          />
+        ) : (
+          <View style={styles.placeholderImage} />
+        )}
+        <View style={styles.textContainer}>
+          <Text style={styles.itemTitle}>{title}</Text>
+          <Text style={styles.itemAuthor}>{author}</Text>
+        </View>
+      </TouchableOpacity>
+    );
+  }
 };
 
 BookItem.defaultProps = {

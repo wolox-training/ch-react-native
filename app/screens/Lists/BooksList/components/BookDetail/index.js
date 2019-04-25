@@ -1,25 +1,39 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Image, Text } from 'react-native';
 
-import detail from './constants';
+import { findBookByIndex } from './utils';
 
 class BookDetailContainer extends Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerTitle: 'aksdaksdkas',
+    };
+  };
+
+  state = { 
+    currentBook: findBookByIndex(this.props.navigation.getParam('id', 1)) 
+  };
+
   render() {
+    const { currentBook } = this.state;
+
+    console.log('jkeke', this.props.navigation.getParam('id', 1));
+
     return (
       <View style={styles.container}>
-        {detail.image_url ? (
+        {currentBook.image_url ? (
           <Image
             style={styles.image}
-            source={{ uri: detail.image_url }}
+            source={{ uri: currentBook.image_url }}
           />
         ) : (
           <View style={styles.placeholderImage} />
         )}
-        <Text style={styles.text}>Title: {detail.title}</Text>
-        <Text style={styles.text}>Author: {detail.author}</Text>
-        <Text style={styles.text}>Genre: {detail.genre}</Text>
-        <Text style={styles.text}>Publisher: {detail.publisher}</Text>
-        <Text style={styles.text}>Year: {detail.year}</Text>
+        <Text style={styles.text}>Title: {currentBook.title}</Text>
+        <Text style={styles.text}>Author: {currentBook.author}</Text>
+        <Text style={styles.text}>Genre: {currentBook.genre}</Text>
+        <Text style={styles.text}>Publisher: {currentBook.publisher}</Text>
+        <Text style={styles.text}>Year: {currentBook.year}</Text>
       </View>
     );
   }

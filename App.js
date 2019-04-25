@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import ListsScreen from './app/screens/Lists';
+import AppNavigator from './app/components/AppNavigator';
 
 function App() {
-  return <ListsScreen/>;
+  return <AppNavigator/>;
 };
 
 export default App;

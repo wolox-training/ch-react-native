@@ -1,14 +1,15 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
-import ListsScreen from '../../screens/Lists'
+import ListsScreen from '../../screens/Lists';
+import BookDetailContainer from '../../screens/Lists/BooksList/components/BookDetail';
 
 const AppNavigator = createStackNavigator(
   {
     Lists: {
       screen: ListsScreen,
-      navigationOptions: () => ({
-        title: `Apiaccere`,
-      }),
+      navigationOptions: props => {
+        console.warn(props.navigation);
+      }
     }
   }
 );

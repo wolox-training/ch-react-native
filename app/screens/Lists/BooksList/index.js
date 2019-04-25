@@ -7,9 +7,11 @@ import { bookData } from './constants';
 class BooksListContainer extends Component {
   renderList = item => (
     <BookItem
+      navigation={this.props.navigation}
       image={item.image_url || undefined}
       title={item.title}
       author={item.author}
+      id={item.id}
     />
   );
 

@@ -1,30 +1,38 @@
+import React from 'react';
+import {Text} from 'react-native';
+
 import { createBottomTabNavigator, createAppContainer, createStackNavigator } from 'react-navigation';
 
 import TodoListScreenContainer from './TodoList';
+import BooksListContainer from './BooksList';
 import BookDetailContainer from './BooksList/components/BookDetail';
 
 const ListsScreen = createBottomTabNavigator(
   {
     TodoList: {
-      screen: createStackNavigator({
-        TodoList: {
-          screen: TodoListScreenContainer,
-          navigationOptions: {
-            headerTitle: 'TodoList'
-          }
-        }
-      }),
+      screen: TodoListScreenContainer,
       navigationOptions: {
         title: 'TodoList'
       }
     },
     BooksList: {
       screen: createStackNavigator({
-        BooksList: {
-          screen: BookDetailContainer,
-          navigationOptions: {
-            headerTitle: 'BooksList'
+        BooksListContainer: {
+          screen: BooksListContainer,
+          navigationOptions: props => {
+            console.warn(props);
           }
+        },
+        BookDetailContainer: {
+          screen: BookDetailContainer,
+          navigationOptions: props => {
+            console.warn(props);
+          }
+        }
+      },{
+        headerMode: 'none',
+        navigationOptions: {
+            headerVisible: false,
         }
       }),
       navigationOptions: {
