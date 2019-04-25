@@ -7,9 +7,15 @@ const AppNavigator = createStackNavigator(
   {
     Lists: {
       screen: ListsScreen,
-      navigationOptions: props => {
-        console.warn(props.navigation);
-      }
+      navigationOptions: ({ navigation }) => ({
+        title: navigation.state.routes[navigation.state.index].routeName
+      })
+    },
+    BookDetail: {
+      screen: BookDetailContainer,
+      navigationOptions: ({ navigation }) => ({
+        title: navigation.state.params.title
+      })
     }
   }
 );

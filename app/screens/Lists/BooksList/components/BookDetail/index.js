@@ -4,12 +4,6 @@ import { View, StyleSheet, Image, Text } from 'react-native';
 import { findBookByIndex } from './utils';
 
 class BookDetailContainer extends Component {
-  static navigationOptions = ({ navigation }) => {
-    return {
-      headerTitle: 'aksdaksdkas',
-    };
-  };
-
   state = { 
     currentBook: findBookByIndex(this.props.navigation.getParam('id', 1)) 
   };

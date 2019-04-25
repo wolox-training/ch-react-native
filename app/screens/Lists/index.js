@@ -16,32 +16,14 @@ const ListsScreen = createBottomTabNavigator(
       }
     },
     BooksList: {
-      screen: createStackNavigator({
-        BooksListContainer: {
-          screen: BooksListContainer,
-          navigationOptions: props => {
-            console.warn(props);
-          }
-        },
-        BookDetailContainer: {
-          screen: BookDetailContainer,
-          navigationOptions: props => {
-            console.warn(props);
-          }
-        }
-      },{
-        headerMode: 'none',
-        navigationOptions: {
-            headerVisible: false,
-        }
-      }),
+      screen: BooksListContainer,
       navigationOptions: {
         title: 'BooksList'
       }
     }
   },
   {
-    initialRouteName: "TodoList"
+    initialRouteName: 'TodoList'
   }
 );
 

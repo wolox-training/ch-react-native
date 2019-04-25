@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 import { View, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { StackActions } from 'react-navigation';
 
 class BookItem extends Component {
-  handlePressItem = () => 
-    {
-      console.log('hey', this.props);
-      this.props.navigation.navigate('BookDetailContainer', { id: this.props.id });
-    }
+  handlePressItem = () => {    
+    const { id, title, navigation } = this.props;
+
+    const action = StackActions.push({
+      routeName: 'BookDetail',
+      params: { 
+        id: id,
+        title:  title
+      }
+    });
+    navigation.dispatch(action);
+  }
 
   render() {
     const { image, title, author } = this.props;
@@ -14,7 +22,7 @@ class BookItem extends Component {
     console.log('no', this.props);
 
     return (
-      <TouchableOpacity 
+      <TouchableOpacity
         onPress={this.handlePressItem}
         style={styles.itemContainer}
       >
@@ -24,8 +32,8 @@ class BookItem extends Component {
             source={{ uri: image }}
           />
         ) : (
-          <View style={styles.placeholderImage} />
-        )}
+            <View style={styles.placeholderImage} />
+          )}
         <View style={styles.textContainer}>
           <Text style={styles.itemTitle}>{title}</Text>
           <Text style={styles.itemAuthor}>{author}</Text>
