@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-import TodoListScreenContainer from './app/screens/TodoList';
+import AppNavigator from './app/components/AppNavigator';
 
 function App() {
- return <TodoListScreenContainer />;
+  return <AppNavigator/>;
 };
 
 export default App;
