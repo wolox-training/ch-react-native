@@ -5,7 +5,7 @@ import BookItem from './components/BookItem';
 import { bookData } from './constants';
 
 class BooksListContainer extends Component {
-  renderList = item => (
+  renderList = ({ item }) => (
     <BookItem
       image={item.image_url || undefined}
       title={item.title}
@@ -18,7 +18,7 @@ class BooksListContainer extends Component {
       <View style={styles.container}>
         <FlatList
           data={bookData}
-          renderItem={({ item }) => this.renderList(item)}
+          renderItem={this.renderList}
         />
       </View>
     );
