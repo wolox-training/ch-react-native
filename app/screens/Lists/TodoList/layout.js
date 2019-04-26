@@ -1,40 +1,34 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { View, StyleSheet, FlatList } from 'react-native';
 
 import TodoItemContainer from './components/TodoItem';
 import TodoInput from './components/TodoInput';
 import RemoveAllItems from './components/RemoveAllItems';
 
-function TodoListScreen({ onAddItem, listData, onDeleteItem, onRemoveAllItems }) {
-  renderList = item => (
-    <TodoItemContainer onDeleteItem={onDeleteItem} index={item.key} item={item} />
+import styles from './styles';
+class TodoListScreen extends PureComponent {
+  renderList = ({ item }) => (
+    <TodoItemContainer 
+      onDeleteItem={this.props.onDeleteItem} 
+      item={item} 
+    />
   );
 
-  return (
-    <View style={styles.container}>
-      <TodoInput onAddItem={onAddItem} />
-      <FlatList
-        style={styles.listContainer}
-        data={listData}
-        renderItem={({ item }) => renderList(item)}
-      />
-      <RemoveAllItems onRemoveAllItems={onRemoveAllItems} />
-    </View>
-  )
-};
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-    flex: 1,
-    justifyContent: 'center'
-  },
-  listContainer: {
-    alignSelf: 'stretch',
-    backgroundColor: 'white',
-    flex: 1
+  render() {
+    const { onAddItem, listData, onRemoveAllItems } = this.props;
+    
+    return (
+      <View style={styles.container}>
+        <TodoInput onAddItem={onAddItem} />
+        <FlatList
+          style={styles.listContainer}
+          data={listData}
+          renderItem={this.renderList}
+        />
+        <RemoveAllItems onRemoveAllItems={onRemoveAllItems} />
+      </View>
+    );
   }
-});
+};
 
 export default TodoListScreen;
