@@ -3,6 +3,8 @@ import { View, StyleSheet, Image, Text } from 'react-native';
 
 import { findBookByIndex } from './utils';
 
+import styles from './styles';
+
 class BookDetailContainer extends Component {
   state = { 
     currentBook: findBookByIndex(this.props.navigation.getParam('id', 1)) 
@@ -10,8 +12,6 @@ class BookDetailContainer extends Component {
 
   render() {
     const { currentBook } = this.state;
-
-    console.log('jkeke', this.props.navigation.getParam('id', 1));
 
     return (
       <View style={styles.container}>
@@ -32,22 +32,5 @@ class BookDetailContainer extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    alignSelf: 'stretch',
-    justifyContent: 'flex-start',
-    flex: 1
-  },
-  image: {
-    alignSelf: 'stretch',
-    height: 200
-  },
-  text: {
-    fontSize: 18,
-    marginTop: 10,
-  }
-});
 
 export default BookDetailContainer;
