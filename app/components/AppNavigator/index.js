@@ -8,7 +8,7 @@ const AppNavigator = createStackNavigator(
       screen: ListsScreen,
       navigationOptions: () => ({
         title: 'Apiaccere',
-      }),
+      })
     }
   }
 );

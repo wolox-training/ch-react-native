@@ -1,12 +1,12 @@
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
 import TodoListScreenContainer from './TodoList'
-import DummyScreenContainer from './Dummy'
+import BooksListContainer from './BooksList'
 
 const ListsScreen = createBottomTabNavigator(
   {
     TodoList: TodoListScreenContainer,
-    Dummy: DummyScreenContainer
+    BooksList: BooksListContainer
   },
   {
     initialRouteName: "TodoList"
