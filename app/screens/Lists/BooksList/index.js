@@ -7,7 +7,7 @@ import { bookData } from './constants';
 class BooksListContainer extends Component {
   renderList = ({ item }) => (
     <BookItem
-      image={item.image_url}
+      image={item.image_url || undefined}
       title={item.title}
       author={item.author}
     />
