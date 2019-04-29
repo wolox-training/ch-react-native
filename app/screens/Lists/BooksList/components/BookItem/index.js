@@ -6,36 +6,24 @@ import styles from './styles';
 import placeholder from './assets/book.png';
 
 class BookItem extends Component {
-  handlePressItem = () => {    
-    const { id, title, navigation } = this.props;
-
-    const action = StackActions.push({
-      routeName: 'BookDetail',
-      params: { 
-        id: id,
-        title:  title
-      }
-    });
-    navigation.dispatch(action);
-  }
+  handlePressBookItem = () => this.props.onPressBookItem(this.props.id, this.props.title); 
 
   render() {
     const { image, title, author } = this.props;
-
     return (
       <TouchableOpacity
-      onPress={this.handlePressItem}
-      style={styles.itemContainer}
-    >
-      <Image
-        style={styles.image}
-        source={image ? { uri: image} : placeholder}
-      />
-      <View style={styles.textContainer}>
-        <Text style={styles.itemTitle}>{title}</Text>
-        <Text style={styles.itemAuthor}>{author}</Text>
-      </View>
-    </TouchableOpacity>
+        onPress={this.handlePressBookItem}
+        style={styles.itemContainer}
+      >
+        <Image
+          style={styles.image}
+          source={image ? { uri: image } : placeholder}
+        />
+        <View style={styles.textContainer}>
+          <Text style={styles.itemTitle}>{title}</Text>
+          <Text style={styles.itemAuthor}>{author}</Text>
+        </View>
+      </TouchableOpacity>
     );
   }
 };
