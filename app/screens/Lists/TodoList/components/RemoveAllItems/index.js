@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
+
+import styles from './styles';
 
 function RemoveAllItems({ onRemoveAllItems }) {
   return (
@@ -11,20 +13,5 @@ function RemoveAllItems({ onRemoveAllItems }) {
     </TouchableOpacity>
   )
 };
-
-const styles = StyleSheet.create({
-  header: {
-    alignItems: 'center',
-    alignSelf: 'stretch',
-    borderColor: '#bbbbbb',
-    borderTopWidth: 1,
-    height: 60,
-    justifyContent: 'center'
-  },
-  title: {
-    color: 'red',
-    fontSize: 20
-  }
-});
 
 export default RemoveAllItems;

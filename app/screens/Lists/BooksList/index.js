@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, FlatList } from 'react-native';
+import { View, FlatList } from 'react-native';
 
 import BookItem from './components/BookItem';
 import { bookData } from './constants';
 
 class BooksListContainer extends Component {
-  renderList = item => (
+  renderList = ({ item }) => (
     <BookItem
       navigation={this.props.navigation}
-      image={item.image_url || undefined}
+      image={item.image_url}
       title={item.title}
       author={item.author}
       id={item.id}
@@ -20,19 +20,11 @@ class BooksListContainer extends Component {
       <View style={styles.container}>
         <FlatList
           data={bookData}
-          renderItem={({ item }) => this.renderList(item)}
+          renderItem={this.renderList}
         />
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1
-  }
-});
 
 export default BooksListContainer;
